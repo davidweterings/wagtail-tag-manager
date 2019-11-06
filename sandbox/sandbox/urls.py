@@ -5,6 +5,7 @@ from django.urls import include, path
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
+from wagtail.contrib.sitemaps.views import sitemap
 
 from wagtail_tag_manager import urls as wtm_urls
 
@@ -13,6 +14,7 @@ urlpatterns = [
 
     path('cms/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
+    path("sitemap.xml", sitemap),
 
     path('wtm/', include(wtm_urls)),
 
